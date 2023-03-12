@@ -27,7 +27,7 @@ Build the application using Maven.
 
 Run the application using the following command.
 
-##### java -jar target/tic-tac-toe-cli-<version>.jar
+##### java -jar target/tic-tac-toe-cli-version.jar
 Note: Replace <version> with the actual version of the JAR file.
 
 You should see the Tic Tac Toe game running on the command-line interface. 

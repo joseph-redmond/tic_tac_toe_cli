@@ -205,4 +205,23 @@ public class GameService {
 		return true;
 	}
 
+	public void start() {
+		init();
+		while (!checkWinner(piece.getPlayer()) && !checkWinner(piece.getAi()) && !checkDraw()) {
+			if (isPlayerTurn()) {
+				playerMove();
+			} else {
+				aiMove();
+			}
+			displayBoard();
+			setPlayerTurn(!isPlayerTurn());
+		}
+		if (checkWinner(getPiece().getPlayer())) {
+			System.out.println("You win!");
+		} else if (checkWinner(getPiece().getAi())) {
+			System.out.println("AI wins!");
+		} else {
+			System.out.println("It's a draw!");
+		}
+	}
 }

@@ -17,23 +17,7 @@ public class TicTacToeConsoleApplication implements CommandLineRunner {
 	public void run(String... args) {
 		CommandLine cmd = new CommandLine(this);
 		cmd.parseArgs(args);
-		gameService.init();
-		while (!gameService.checkWinner(gameService.getPiece().getPlayer()) && !gameService.checkWinner(gameService.getPiece().getAi()) && !gameService.checkDraw()) {
-			if (gameService.isPlayerTurn()) {
-				gameService.playerMove();
-			} else {
-				gameService.aiMove();
-			}
-			gameService.displayBoard();
-			gameService.setPlayerTurn(!gameService.isPlayerTurn());
-		}
-		if (gameService.checkWinner(gameService.getPiece().getPlayer())) {
-			System.out.println("You win!");
-		} else if (gameService.checkWinner(gameService.getPiece().getAi())) {
-			System.out.println("AI wins!");
-		} else {
-			System.out.println("It's a draw!");
-		}
+		gameService.start();
 	}
 
 

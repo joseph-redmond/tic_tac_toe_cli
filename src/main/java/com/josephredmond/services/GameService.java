@@ -3,6 +3,7 @@ package com.josephredmond.services;
 import com.josephredmond.enums.GamePiece;
 import com.josephredmond.models.Board;
 import com.josephredmond.models.Piece;
+import java.security.SecureRandom;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -22,7 +23,7 @@ public class GameService {
 	private boolean playerTurn;
 	private Board board = new Board();
 	private Piece piece = new Piece();
-	private Random random = new Random();
+	private Random random = new SecureRandom();
 
 	public void init() {
 		initializeBoard();
